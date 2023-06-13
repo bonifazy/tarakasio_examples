@@ -39,7 +39,10 @@ async def help_command(message: types.Message):
                         "то надо писать дополнительный обрабочик.")
 
 
-@dp.message_handler()
+# Изначально твой пустой хендлер принимал абсолютно всё от юзера: и текст, и фотку, и файл и геолокацию.
+# Нам нужен только текст, добавляем фильтр текста
+# @dp.message_handler()
+@dp.message_handler(content_types=['text'])
 async def echo_message(msg: types.Message):
 
     # Если функция очень сильно зависит от echo_message и ее больше никто не вызывает,

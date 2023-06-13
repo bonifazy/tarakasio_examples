@@ -1,0 +1,6 @@
+__pycache__/
+env/
+.idea/
+config.py
+*.py[co]
+.DS_Store
